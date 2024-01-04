@@ -3,7 +3,7 @@ const app = express();
 let notes = require("./data");
 const cors = require("cors");
 
-app.use(cors(),express.json());
+app.use(cors(), express.json(), express.static("dist"));
 
 const generateId = () => {
   const maxID = notes.length > 0 ? Math.max(...notes.map((n) => n.id)) : 0;
